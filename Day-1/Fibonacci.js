@@ -1,7 +1,7 @@
 /*Given a number "n" find the first "n" elements of 
 the fibonacci sequence*/
 
-/*Fibonnaci is a sequence in which each number is a sequence
+/*Fibonacci is a sequence in which each number is a sequence
 of the two preceding ones*/
 
 // the first two numbers in the sequence are 0 and 1
