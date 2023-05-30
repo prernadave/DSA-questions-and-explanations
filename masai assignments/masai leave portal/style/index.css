@@ -1,0 +1,15 @@
+.logo{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.mainMenu{
+    display: flex;
+    justify-content: space-around;
+    gap: 22px;
+}
+
+nav ul a {
+    text-decoration: none;
+}

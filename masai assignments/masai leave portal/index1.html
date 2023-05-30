@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/index.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1>MASAI LEAVE PORT</h1>
+
+            <div class="mainMenu">
+                <li><a href=""></a>HOME </li>
+                <li><a href=""></a>DASHBOARD</li>
+                <li><a href=""></a>STATUS</li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- form -->
+
+    <form id="leave-form">
+        <label for="id">Unique ID:</label>
+        <input type="text" id="id" name="id" required>
+        <br>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" minlength="4" name="name" id="name" required>
+        <br>
+        <br>
+        <label for="reason">Reason:</label>
+        <input type="text" name="reason" id="reason" required>
+        <br><br>
+        <label for="designation">Designation:</label>
+        <label><input type="radio" name="designation" id="employee" value="Employee" checked>Employee</label>
+        <label> <input type="radio" name="designation" id="student" value="Student" checked> student</label>
+        <br>
+        <br>
+
+        <label for="start-date">Leave Start Date</label>
+        <input type="date" id="start-date" name="start-date" min="" required>
+        <br><br>
+        <label for="end-ate">Leave End Date </label>
+        <input type="date" id="end-date" name="end-date" min="" required>
+
+        <br><br>
+        <label for="Overseer">Overseer </label>
+        <select id="overseer" name="overseer" required>
+            <option value="" selected disabled>Select Overseer</option>
+            <option value="HR">HR</option>
+            <option value="EC">EC</option>
+            <option value="MANAGER">MANAGER</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Apply">
+    </form>
+</body>
+
+</html>
+
+<script src="./script/index.js"></script>

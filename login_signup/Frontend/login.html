@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .form label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form input {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+
+    .form button {
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4285f4;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .form button:hover {
+        background-color: #0d47a1;
+    }
+
+    .form .error {
+        color: red;
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="form" id="login-form">
+            <h2>Login</h2>
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required />
+            <button id="login-button">Login</button>
+            <p class="error" id="login-error"></p>
+        </div>
+        <div class="form" id="signup-form">
+            <h2>Signup</h2>
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" required />
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required />
+            <button id="signup-button">Signup</button>
+            <p class="error" id="signup-error"></p>
+        </div>
+    </div>
+</body>
+
+
+</html>
+<script>
+    const loginForm = document.getElementById("login-form");
+    const loginEmailInput = document.getElementById("login-email");
+    const loginPasswordInput = document.getElementById("login-password");
+    const loginButton = document.getElementById("login-button");
+    const loginError = document.getElementById("login-error");
+
+    const signupForm = document.getElementById("signup-form");
+    const signupEmailInput = document.getElementById("signup-email");
+    const signupPasswordInput = document.getElementById("signup-password");
+    const signupButton = document.getElementById("signup-button");
+    const signupError = document.getElementById("signup-error");
+
+    const BASE_URL = "https://weak-cyan-angelfish-vest.cyclic.app/api/login";
+
+    loginButton.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        const email = loginEmailInput.value;
+        const password = loginPasswordInput.value;
+
+
+        try {
+            const response = await fetch(BASE_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (!response.ok) {
+                throw new Error("Invalid email or password.");
+            }
+            const { token } = await response.json();
+            localStorage.setItem("token", token);
+
+            // Redirect to dashboard or any other page
+            alert('login successfuly')
+
+            console.log(token);
+        } catch (error) {
+            loginError.textContent = error.message;
+        }
+    });
+
+    const reg = "https://weak-cyan-angelfish-vest.cyclic.app/api/register"
+
+    signupButton.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        const email = signupEmailInput.value;
+        const password = signupPasswordInput.value;
+
+        try {
+            const response = await fetch(reg, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (!response.ok) {
+                throw new Error("Could not create account.");
+            }
+            const { token } = await response.json();
+            localStorage.setItem("token", token);
+
+            // Redirect to dashboard or any other page
+
+        } catch (error) {
+            signupError.textContent = error.message;
+        }
+    });
+
+</script>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD Operations with Deployed JSON Server</title>
+  </head>
+  <body>
+    <h1>CRUD Operations with Deployed JSON Server</h1>
+    <ul id="userList"></ul>
+    <h2>Add New User</h2>
+    <form>
+      <label>Name:</label>
+      <input type="text" id="nameInput"><br>
+      <label>Email:</label>
+      <input type="email" id="emailInput"><br>
+      <button type="button" id="addButton">Add</button>
+    </form>
+    <script>
+// Get the HTML elements that we need to interact with
+const userList = document.getElementById('userList');
+const nameInput = document.getElementById('nameInput');
+const emailInput = document.getElementById('emailInput');
+const addButton = document.getElementById('addButton');
+
+// Define the API endpoint URL
+const apiUrl = 'https://mock-api-pre.onrender.com/hotels';
+
+// Function to retrieve all users from the server
+async function getUsers() {
+  const response = await fetch(apiUrl);
+  const users = await response.json();
+  return users;
+}
+
+// Function to retrieve a single user by ID from the server
+async function getUserById(id) {
+  const response = await fetch(apiUrl + '/' + id);
+  const user = await response.json();
+  return user;
+}
+
+// Function to create a new user on the server
+async function createUser(user) {
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  });
+  const newUser = await response.json();
+  return newUser;
+}
+
+// Function to update an existing user on the server
+async function updateUser(id, user) {
+  const response = await fetch(apiUrl + '/' + id, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  });
+  const updatedUser = await response.json();
+  return updatedUser;
+}
+
+// Function to delete an existing user from the server
+async function deleteUser(id) {
+  const response = await fetch(apiUrl + '/' + id, {
+    method: 'DELETE'
+  });
+  const deletedUser = await response.json();
+  return deletedUser;
+}
+
+// Function to display the list of users on the HTML page
+async function displayUsers() {
+  const users = await getUsers();
+  userList.innerHTML = '';
+  users.forEach(user => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
+      <p>Name: ${user.name}</p>
+      <p>Email: ${user.email}</p>
+      <button onclick="editUser(${user.id})">Edit</button>
+      <button onclick="deleteUserById(${user.id})">Delete</button>
+    `;
+    userList.appendChild(listItem);
+  });
+}
+
+// Function to handle the 'Add' button click event
+addButton.addEventListener('click', async () => {
+  const user = {
+    name: nameInput.value,
+    email: emailInput.value
+  };
+  const newUser = await createUser(user);
+  nameInput.value = '';
+  emailInput.value = '';
+  displayUsers();
+});
+
+// Function to handle the 'Edit' button click event
+async function editUser(id) {
+  const user = await getUserById(id);
+  const newName = prompt('Enter the new name', user.name);
+  const newEmail = prompt('Enter the new email', user.email);
+  const updatedUser = await updateUser(id, { name: newName, email: newEmail });
+  displayUsers();
+}
+
+// Example button click event to delete a user by ID
+// const deleteButton = document.getElementById('deleteButton');
+// deleteButton.addEventListener('click', async () => {
+//   const userId = 123; // Replace with the ID of the user you want to delete
+//   const deletedUser = await deleteUserById(userId);
+//   console.log('User deleted:', deletedUser);
+// });
+
+
+// Function to handle the 'Delete
+
+      // Paste the JavaScript code from my previous response here
+    </script>
+  </body>
+</html>
