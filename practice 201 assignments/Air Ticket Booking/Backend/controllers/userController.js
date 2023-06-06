@@ -89,3 +89,6 @@ module.exports = { getUser, register, login }
 //       "__v": 0
 //     }
 //   ]
+
+// "userId": "647d799a9ca6ab8cf9e3abf9",
+//   "flightId": "647da153a443d089dc837903"
