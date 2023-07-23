@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&family=Roboto:wght@100;300&display=swap');
+
+*{
+    margin: 0;
+}
+.nike-logo {
+    width: 100px;
+
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    justify-content: space-around;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 72px
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+nav button {
+    background-color: #cf1010;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero{
+    display: flex;
+    width: 1280px;
+    margin: 80px auto;
+    font-family: 'Poppins', sans-serif;
+    justify-content:space-around ;
+}
+
+.hero-content{
+    width: 640px;
+}
+
+.hero-content h1{
+    font-size: 90px;
+    font-weight: 900;
+    line-height: 90px;
+    margin-bottom: 30px;
+}
+
+.hero-content p{
+    font-size: 20px;
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.hero-image{
+    width: 640px;  
+}
+
+.hero-image img {
+    width: 600px;
+    height: 400px;
+  
+}
+
+
+.hero .hero-content .hero-btn button{
+    background-color: #cf1010;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero .hero-content .hero-btn{
+    display: flex;
+    gap: 50px; /* Adjust the value as needed for the desired gap size */
+   
+}
+
+.shopping p{
+margin-top: 23px;
+}
+
+
+.brand-i img{
+width: 40px;
+}
