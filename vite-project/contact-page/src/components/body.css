@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.black-button {
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.black-button:hover {
+    background-color: #333;
+}
+
+.via-email-button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 40px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.via-email-button:hover {
+    background-color: #333;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-form {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label,
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    display: block;
+    width: 100%;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #333;
+}

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&family=Roboto:wght@100;300&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.content li {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.content li:last-child {
+    margin-right: 0;
+}
+
+.content li:hover {
+    color: #007BFF; /* Change to your desired hover color */
+    text-decoration: underline;
+}
