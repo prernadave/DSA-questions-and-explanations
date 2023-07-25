@@ -11,7 +11,10 @@ body {
     align-items: center;
     height: 100vh;
 }
-
+.main_cont{
+    display: flex;
+    justify-content: center;
+}
 .black-button {
     padding: 15px 30px;
     background-color: black;
@@ -51,12 +54,12 @@ body {
     background-color: #f2f2f2;
 }
 
-.form-container {
+/* .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+} */
 
 .contact-form {
     width: 400px;

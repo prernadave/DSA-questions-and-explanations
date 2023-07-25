@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import Body from './components/contentbody'
+import Contentbody from './components/contentbody'
+
 
 const App = () => {
   return (
     <div>
       <Navbar/>
-      <Body/>
+     <Contentbody/>
     </div>
   )
 }
